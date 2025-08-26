@@ -13,7 +13,7 @@ const Header = () => {
     const formattedTime = time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
     return (
-        <header className="w-full border-b-2 border-black bg-transparent p-4 flex items-center justify-between">
+        <header className="w-full border-b-4 border-black bg-transparent p-4 flex items-center justify-between">
 
             {/* Left: Name */}
             <div className="flex items-center gap-2">
