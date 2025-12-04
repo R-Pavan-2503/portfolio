@@ -6,6 +6,7 @@ import { GrAchievement } from "react-icons/gr";
 import Header from "../components/Header";
 import ModelHeader from "../components/ModelHeader";
 import ContactModal from "../components/ContactModal";
+import ResumeContent from "../components/ResumeContent";
 import { MdFileOpen } from "react-icons/md";
 import { SiReact, SiHtml5, SiCss3, SiNodedotjs, SiMongodb, SiTailwindcss, SiChartdotjs, SiJavascript, SiApollographql, SiMaterialformkdocs, SiPostgresql, SiExpress, SiPython, SiOpencv, SiTensorflow, SiScikitlearn, SiPandas, SiLeetcode, SiCodechef, SiCodeforces, SiCplusplus, SiMysql, SiFigma, SiBootstrap, SiGit, SiGithub, SiJenkins, SiDocker, SiKubernetes, SiNumpy, SiPostman, SiLinux, SiC } from "react-icons/si";
 import { AiOutlineApi } from "react-icons/ai";
@@ -66,6 +67,26 @@ const Main = () => {
             {
                 name: "Web Development",
                 children: [
+
+                    {
+                        name: "Water Forecasting Dashboard",
+                        subheading: "Frontend - React.js, Material UI, Graph.js - 2024",
+                        description: "Developed a comprehensive React.js dashboard using Material UI and Chart.js to deliver real-time water and reservoir forecasts with interactive and dynamic visualizations. The platform enables stakeholders to explore and customize data representations, including trend analysis and predictive insights, enhancing decision-making for efficient water resource management. Implemented responsive design, state management, and data-driven components to ensure smooth user interaction, while integrating APIs for real-time data fetching and updates, transforming complex datasets into actionable insights through an intuitive and visually appealing interface.",
+                        skills: [
+                            "React",
+                            "Material UI",
+                            "Postgresql",
+                            "Chart.js",
+                            "Tailwindcss",
+                            "JavaScript",
+                            "RESTAPI",
+                            "Responsive UI Design",
+                            "Data Visualization",
+                            "Frontend State Management"
+                        ],
+                        link: "https://github.com/Lokeshzz7/Water_Frontend_Andhra",
+
+                    },
                     {
                         name: "Travels Dashboard",
                         subheading: "Freelancing - MongoDB, Express.js, React.js, Node.js - 2024",
@@ -84,26 +105,7 @@ const Main = () => {
                             "Data Visualization",
                             "Frontend State Management"
                         ],
-                        link: "https://github.com/R-Pavan-2503",
-                    },
-                    {
-                        name: "Water Forecasting Dashboard",
-                        subheading: "Frontend - React.js, Material UI, Graph.js - 2024",
-                        description: "Developed a comprehensive React.js dashboard using Material UI and Chart.js to deliver real-time water and reservoir forecasts with interactive and dynamic visualizations. The platform enables stakeholders to explore and customize data representations, including trend analysis and predictive insights, enhancing decision-making for efficient water resource management. Implemented responsive design, state management, and data-driven components to ensure smooth user interaction, while integrating APIs for real-time data fetching and updates, transforming complex datasets into actionable insights through an intuitive and visually appealing interface.",
-                        skills: [
-                            "React",
-                            "Material UI",
-                            "Postgresql",
-                            "Chart.js",
-                            "Tailwindcss",
-                            "JavaScript",
-                            "RESTAPI",
-                            "Responsive UI Design",
-                            "Data Visualization",
-                            "Frontend State Management"
-                        ],
-                        link: "https://github.com/R-Pavan-2503",
-
+                        link: "https://github.com/R-Pavan-2503?tab=repositories",
                     },
                 ],
             },
@@ -125,7 +127,7 @@ const Main = () => {
                             "Accuracy Optimization",
                             "Safety-focused AI Applications"
                         ],
-                        link: "https://github.com/R-Pavan-2503",
+                        link: "https://github.com/R-Pavan-2503/drowsiness-detection",
                     },
                 ],
             },
@@ -137,7 +139,7 @@ const Main = () => {
                     {
                         name: "Machine Learning Engineer",
                         subheading: "04/2022 – 05/2022",
-                        description: "Developed a prototype to rival Grammarly, leveraging NLP techniques to detect errors in scientific and technical publications with 90% precision. Created a system to identify subject-verb disagreements and punctuation mistakes, providing alternative suggestions to authors.",
+                        description: "At Nova Techset, I worked on developing an NLP-driven proofreading prototype aimed at rivaling Grammarly for scientific publications. I built grammar, punctuation, and semantic-error detection pipelines that achieved 90% precision. My work involved identifying subject–verb disagreements and improving linguistic consistency across technical manuscripts. I also created intelligent correction-suggestion modules to help authors enhance clarity and accuracy. The project allowed me to work closely with editors and domain experts to validate outputs. I optimized the model’s performance through multiple iterations and tuning. Overall, the system significantly improved the quality and reliability of automated proofreading.",
                         skills: ["Python", "NLP", "Machine Learning"]
                     },
                 ],
@@ -148,7 +150,7 @@ const Main = () => {
                     {
                         name: "Python Developer",
                         subheading: "05/2024 – 07/2024",
-                        description: "Developed AI-based applications, including an Image Caption Generator using OpenCV and NER, achieving 90% accuracy on 1,000+ images. Optimized the system for 20% fewer false positives and 87% true negatives, showcasing applications in media and accessibility.",
+                        description: "During my internship at Truly Media, I developed an AI-based Image Caption Generator using OpenCV and NER to process and describe over a thousand images. The system achieved 90% accuracy through refined preprocessing and targeted model improvements. I focused heavily on optimizing the pipeline, reducing false positives by 20% and improving true negatives to 87%. I integrated this solution into internal media workflows to support accessibility and automated metadata generation. Extensive testing and benchmarking were conducted to ensure consistent model performance. I collaborated with the engineering team to deploy the tool in a production-ready format. This project strengthened my understanding of computer vision and AI-driven content analysis.",
                         skills: ["Python", "OpenCV", "NLP", "NER", "Machine Learning"]
                     },
                 ],
@@ -159,7 +161,7 @@ const Main = () => {
                     {
                         name: "Website Developer",
                         subheading: "07/2023 – 10/2023",
-                        description: "Designed and developed a responsive website using React.js, Tailwind CSS, and Node.js, achieving an interactive design and UI. Enhanced user experience using dynamic interface and 3D model using Spline, increasing user interactions and usability.",
+                        description: "At TechMedZ, I designed and developed a fully responsive website using React.js, Tailwind CSS, and Node.js, ensuring a smooth user experience across devices. I built interactive UI components that improved engagement and navigation flow. A major highlight was integrating a Spline-based 3D model, which enhanced the visual appeal and product presentation. I adopted a reusable component architecture to improve maintainability and speed up development. Regular feedback sessions with stakeholders helped refine the UX and align the design with business goals. I focused on optimizing performance and load times for better usability. The final product significantly improved user interaction and overall platform professionalism.",
                         skills: ["React", "Tailwindcss", "Node", "Responsive UI Design"]
                     },
                 ],
@@ -232,37 +234,23 @@ const Main = () => {
                     {
                         name: "SIH Finalist 2024",
                         subheading: "Smart India Hackathon 2024",
-                        description: "Developed an innovative reservoir and water management dashboard, showcasing real-time data analysis and improving resource management. Competed among thousands of teams nationwide and reached the finals.",
+                        description: "As a finalist in the Smart India Hackathon, I developed an innovative reservoir and water-management dashboard focused on real-time analysis and forecasting. The system enabled stakeholders to visualize changing water levels and make data-driven decisions. I contributed to both the analytical model and the frontend representation of insights. The project showcased my ability to convert raw environmental data into actionable intelligence. This experience strengthened my skills in problem-solving and high-pressure collaborative development.",
                     },
                     {
                         name: "Finalist EPOCH (IITD)",
                         subheading: "IIT Delhi Hackathon",
-                        description: "Developed an accident analysis dashboard, enabling data-driven insights for improved accident prevention and response strategies to avoid accidents. Demonstrated technical excellence and innovative problem-solving.",
+                        description: "I participated in the IIT Delhi EPOCH hackathon as a finalist, creating an accident-analysis dashboard designed to improve prevention and response strategies. The solution transformed accident datasets into meaningful visual patterns that could guide authorities in reducing risk. I worked on both model logic and interface behavior to ensure clarity and usability. This project emphasized my ability to handle data-heavy problem statements with precision. It also deepened my understanding of real-world safety analytics.",
                     },
                     {
                         name: "Finalist in HACKCIT 2024",
                         subheading: "Codeathon",
-                        description: "Competed in a codeathon showcasing problem-solving skills and innovative coding solutions in a highly competitive environment. Enhanced coding skills and collaboration abilities.",
+                        description: "As a finalist in HACKCIT 2024, I competed in a high-intensity codeathon demonstrating strong problem-solving and algorithmic thinking. I tackled complex challenges under time constraints, consistently delivering optimized solutions. The event allowed me to explore creative approaches to technical problems while collaborating with competitive peers. It significantly sharpened my coding logic and competitive programming skills. This achievement reflects my commitment to continuous improvement and performance in technical contests.",
                     },
                 ]
             },
         ],
         Certificates: [
-            {
-                name: "Cloud & Networking",
-                children: [
-                    {
-                        name: "AWS Cloud Practitioner",
-                        subheading: "Amazon Web Services",
-                        description: "Fundamentals of Cloud Development - Comprehensive understanding of AWS cloud services, architecture, and best practices.",
-                    },
-                    {
-                        name: "CISCO - Introduction to Networking",
-                        subheading: "Cisco Certified",
-                        description: "Basic Network Fundamentals - Covering networking protocols, infrastructure, and essential concepts.",
-                    },
-                ]
-            },
+
             {
                 name: "Web Development",
                 children: [
@@ -288,6 +276,21 @@ const Main = () => {
                     },
                 ]
             },
+            {
+                name: "Cloud & Networking",
+                children: [
+                    {
+                        name: "AWS Cloud Practitioner",
+                        subheading: "Amazon Web Services",
+                        description: "Fundamentals of Cloud Development - Comprehensive understanding of AWS cloud services, architecture, and best practices.",
+                    },
+                    {
+                        name: "CISCO - Introduction to Networking",
+                        subheading: "Cisco Certified",
+                        description: "Basic Network Fundamentals - Covering networking protocols, infrastructure, and essential concepts.",
+                    },
+                ]
+            },
         ],
         "Coding Profiles": [
             {
@@ -297,19 +300,19 @@ const Main = () => {
                         name: "LeetCode",
                         subheading: "Top 4% • Rating: 1953 • Knight Level",
                         description: "Solved 727 problems with a current rating of 1953 and max rating of 1953. Achieved Knight level status and highest rank of 705 in Biweekly Contest 147. Consistently solving challenging algorithmic problems and maintaining top percentile performance.",
-                        link: "https://leetcode.com/u/R-Pavan-2503/",
+                        link: "https://leetcode.com/u/PAVAN2503/",
                     },
                     {
                         name: "CodeChef",
                         subheading: "2 Star • Rating: 1459 • 400+ Problems",
                         description: "Current rating of 1459 with max rating of 1524. Solved 400+ problems and achieved highest rank of 234 in Starters 144 Division 3. Actively participating in monthly contests and improving problem-solving skills.",
-                        link: "https://www.codechef.com/users/r_pavan_2503",
+                        link: "https://www.codechef.com/users/pavan2503",
                     },
                     {
                         name: "CodeForces",
                         subheading: "Rating: 1096 • 100+ Problems",
                         description: "Current rating of 1096 with max rating of 1096. Solved 100+ problems and achieved highest rank of 8088 in CodeForces 982 (Div 2) contest. Participating in regular contests to enhance algorithmic thinking.",
-                        link: "https://codeforces.com/profile/R-Pavan-2503",
+                        link: "https://codeforces.com/profile/Pavan2503",
                     },
                 ]
             },
@@ -322,11 +325,15 @@ const Main = () => {
                         name: "Graphic Design Team Lead",
                         subheading: "Leadership Role",
                         description: "Led the Graphic Design team for Magnus Symposium, a national-level event with 1000+ participants. Designed various posters, promotional materials, and branding assets. Coordinated a team of designers and ensured timely delivery of all visual content for the symposium.",
+                        link: "https://www.instagram.com/magnus.cit/",
+
                     },
                     {
                         name: "Web Development Workshop Speaker",
                         subheading: "Technical Speaker",
                         description: "Delivered a comprehensive lecture on modern web development, teaching 50+ participants practical skills and tools like React.js, Node.js, and Tailwind CSS. Created hands-on exercises and provided mentorship to aspiring developers.",
+                        link: "https://www.instagram.com/magnus.cit/",
+
                     },
                 ]
             },
@@ -495,46 +502,8 @@ const Main = () => {
                                             </div>
                                         )}
 
-                                        {/* PDF Download Section - Clean Design */}
-                                        {selectedFile.isPDF && (
-                                            <div className="mt-8">
-                                                {/* Styled Download Card */}
-                                                <div className="border-4 border-black rounded-2xl p-8 bg-gray-100 hover:bg-gray-200 transition-colors">
-                                                    <div className="flex flex-col items-center justify-center space-y-6">
-                                                        {/* PDF Icon */}
-                                                        <div className="text-8xl">
-                                                            <FaFileAlt className="text-red-600" />
-                                                        </div>
-
-                                                        {/* File Info */}
-                                                        <div className="text-center">
-                                                            <h3 className="text-3xl font-bold unlock-regular mb-2">R. Pavan - Resume</h3>
-                                                            <p className="text-lg chakra-petch-light text-gray-600">Professional Resume PDF</p>
-                                                        </div>
-
-                                                        {/* Download Button */}
-                                                        <a
-                                                            href="/resume.pdf"
-                                                            download="R_Pavan_Resume.pdf"
-                                                            className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded-xl hover:bg-gray-800 transition-all hover:scale-105 chakra-petch-regular text-xl border-2 border-black"
-                                                        >
-                                                            <FaDownload size={24} />
-                                                            Download Resume
-                                                        </a>
-
-                                                        {/* View Button */}
-                                                        <a
-                                                            href="/resume.pdf"
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="inline-flex items-center gap-3 px-8 py-3 bg-transparent text-black rounded-xl border-2 border-black hover:bg-gray-300 transition-all chakra-petch-regular text-lg"
-                                                        >
-                                                            View in New Tab
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )}
+                                        {/* PDF Resume Content */}
+                                        {selectedFile.isPDF && <ResumeContent />}
 
 
 
