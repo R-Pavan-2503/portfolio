@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaEnvelope, FaBatteryFull } from "react-icons/fa";
 import { TiBatteryMid } from "react-icons/ti";
 
-const Header = () => {
+const Header = ({ onEmailClick }) => {
     const [time, setTime] = useState(new Date());
 
     useEffect(() => {
@@ -33,7 +33,11 @@ const Header = () => {
 
             {/* Right: Email, battery, time */}
             <div className="flex items-center gap-4 text-xl unlock-regular">
-                <div className="flex items-center gap-1 ">
+                <div
+                    className="flex items-center gap-1 cursor-pointer hover:scale-110 transition-transform"
+                    onClick={onEmailClick}
+                    title="Contact Info"
+                >
                     <FaEnvelope size={40} />
                 </div>
                 <div className="flex items-center gap-1 h-8">

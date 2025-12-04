@@ -5,8 +5,9 @@ import { VscBracketDot } from "react-icons/vsc";
 import { GrAchievement } from "react-icons/gr";
 import Header from "../components/Header";
 import ModelHeader from "../components/ModelHeader";
+import ContactModal from "../components/ContactModal";
 import { MdFileOpen } from "react-icons/md";
-import { SiReact, SiHtml5, SiCss3, SiNodedotjs, SiMongodb, SiTailwindcss, SiChartdotjs, SiJavascript, SiApollographql, SiMaterialformkdocs, SiPostgresql, SiExpress, SiPython, SiOpencv, SiTensorflow, SiScikitlearn, SiPandas } from "react-icons/si";
+import { SiReact, SiHtml5, SiCss3, SiNodedotjs, SiMongodb, SiTailwindcss, SiChartdotjs, SiJavascript, SiApollographql, SiMaterialformkdocs, SiPostgresql, SiExpress, SiPython, SiOpencv, SiTensorflow, SiScikitlearn, SiPandas, SiLeetcode, SiCodechef, SiCodeforces, SiCplusplus, SiMysql, SiFigma, SiBootstrap, SiGit, SiGithub, SiJenkins, SiDocker, SiKubernetes, SiNumpy, SiPostman, SiLinux, SiC } from "react-icons/si";
 import { AiOutlineApi } from "react-icons/ai";
 import { MdDesignServices } from "react-icons/md";
 import { FaLayerGroup, FaGithub, FaRobot, FaBrain, FaTrophy, FaMedal, FaStar } from "react-icons/fa";
@@ -46,6 +47,7 @@ const Main = () => {
     const [openApp, setOpenApp] = useState(null);
     const [expandedFolders, setExpandedFolders] = useState({});
     const [selectedFile, setSelectedFile] = useState(null);
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
     const apps = [
         { title: "Projects", icon: <FaLaptopCode /> },
@@ -166,59 +168,59 @@ const Main = () => {
             {
                 name: "Languages",
                 children: [
-                    { name: "Python", description: "Proficient in Python for AI/ML, web development, and automation" },
-                    { name: "C++", description: "Strong foundation in C++ for competitive programming and system-level programming" },
-                    { name: "JavaScript", description: "Expert in JavaScript for full-stack web development" },
-                    { name: "SQL", description: "Database query language for relational databases" },
-                    { name: "Java", description: "Object-oriented programming and enterprise applications" },
-                    { name: "C", description: "Low-level programming and system fundamentals" },
+                    { name: "Python", icon: <SiPython className="text-blue-500" size={30} />, description: "Used in AI/ML projects, Image Caption Generator, Driver Drowsiness Detection, and NLP applications" },
+                    { name: "C++", icon: <SiCplusplus className="text-blue-600" size={30} />, description: "Applied in competitive programming (LeetCode, CodeChef, CodeForces) and algorithmic problem solving" },
+                    { name: "JavaScript", icon: <SiJavascript className="text-yellow-500" size={30} />, description: "Core language for React.js, Node.js, and Express.js in web development projects" },
+                    { name: "SQL", icon: <FaChartBar className="text-purple-600" size={30} />, description: "Used for database queries in MySQL, PostgreSQL, and data management in dashboards" },
+                    { name: "Java", icon: <FaCode className="text-red-600" size={30} />, description: "Applied in object-oriented programming and enterprise application development" },
+                    { name: "C", icon: <SiC className="text-blue-700" size={30} />, description: "Foundation for system-level programming and understanding computer architecture" },
                 ]
             },
             {
                 name: "Databases",
                 children: [
-                    { name: "MySQL", description: "Relational database management system" },
-                    { name: "MongoDB", description: "NoSQL document-oriented database" },
-                    { name: "PostgreSQL", description: "Advanced open-source relational database" },
+                    { name: "MySQL", icon: <SiMysql className="text-blue-600" size={30} />, description: "Used in relational database management for various web applications" },
+                    { name: "MongoDB", icon: <SiMongodb className="text-green-600" size={30} />, description: "Implemented in Travels Dashboard for NoSQL data storage and real-time updates" },
+                    { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-700" size={30} />, description: "Utilized in Water Forecasting Dashboard for complex data relationships" },
                 ]
             },
             {
                 name: "Web Development",
                 children: [
-                    { name: "React.js", description: "Modern frontend library for building user interfaces" },
-                    { name: "Node.js", description: "JavaScript runtime for server-side applications" },
-                    { name: "Express.js", description: "Web application framework for Node.js" },
-                    { name: "Figma", description: "UI/UX design and prototyping tool" },
-                    { name: "Bootstrap", description: "CSS framework for responsive web design" },
-                    { name: "Tailwind CSS", description: "Utility-first CSS framework" },
-                    { name: "HTML", description: "Markup language for web pages" },
-                    { name: "CSS", description: "Styling language for web design" },
+                    { name: "React.js", icon: <SiReact className="text-blue-500" size={30} />, description: "Built Travels Dashboard, Water Forecasting Dashboard, and TechMedZ website" },
+                    { name: "Node.js", icon: <SiNodedotjs className="text-green-600" size={30} />, description: "Backend server for Travels Dashboard and TechMedZ projects" },
+                    { name: "Express.js", icon: <SiExpress className="text-gray-700" size={30} />, description: "RESTful API development in MERN stack applications" },
+                    { name: "Figma", icon: <SiFigma className="text-purple-600" size={30} />, description: "UI/UX design and prototyping for web applications" },
+                    { name: "Bootstrap", icon: <SiBootstrap className="text-purple-700" size={30} />, description: "Responsive design framework for rapid development" },
+                    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-blue-500" size={30} />, description: "Styling in portfolio, TechMedZ website, and modern UI components" },
+                    { name: "HTML", icon: <SiHtml5 className="text-orange-600" size={30} />, description: "Markup foundation for all web applications and interfaces" },
+                    { name: "CSS", icon: <SiCss3 className="text-blue-600" size={30} />, description: "Custom styling and animations across web projects" },
                 ]
             },
             {
                 name: "DevOps",
                 children: [
-                    { name: "Git", description: "Version control system" },
-                    { name: "GitHub", description: "Code hosting platform for version control" },
-                    { name: "Jenkins", description: "Automation server for CI/CD" },
-                    { name: "Docker", description: "Containerization platform" },
-                    { name: "Kubernetes", description: "Container orchestration system" },
+                    { name: "Git", icon: <SiGit className="text-orange-600" size={30} />, description: "Version control for all projects and collaborative development" },
+                    { name: "GitHub", icon: <SiGithub className="text-gray-800" size={30} />, description: "Repository hosting, collaboration, and portfolio showcase" },
+                    { name: "Jenkins", icon: <SiJenkins className="text-red-600" size={30} />, description: "CI/CD automation and deployment pipelines" },
+                    { name: "Docker", icon: <SiDocker className="text-blue-600" size={30} />, description: "Containerization for application deployment" },
+                    { name: "Kubernetes", icon: <SiKubernetes className="text-blue-700" size={30} />, description: "Container orchestration for scalable applications" },
                 ]
             },
             {
                 name: "Machine Learning Tools",
                 children: [
-                    { name: "spaCy", description: "Industrial-strength NLP library" },
-                    { name: "Pandas", description: "Data manipulation and analysis library" },
-                    { name: "NumPy", description: "Numerical computing library" },
-                    { name: "Matplotlib", description: "Data visualization library" },
-                    { name: "Postman", description: "API development and testing tool" },
-                    { name: "Tableau", description: "Business intelligence and analytics platform" },
-                    { name: "Power BI", description: "Data visualization and business analytics" },
-                    { name: "Scikit-learn", description: "Machine learning library for Python" },
-                    { name: "REST API", description: "Web service architecture" },
-                    { name: "Linux", description: "Unix-like operating system" },
-                    { name: "NLP", description: "Natural Language Processing techniques" },
+                    { name: "spaCy", icon: <FaBrain className="text-purple-600" size={30} />, description: "NLP library used in Grammarly prototype at Nova Techset" },
+                    { name: "Pandas", icon: <SiPandas className="text-blue-600" size={30} />, description: "Data manipulation in Driver Drowsiness Detection and ML projects" },
+                    { name: "NumPy", icon: <SiNumpy className="text-blue-500" size={30} />, description: "Numerical computing foundation for ML algorithms" },
+                    { name: "Matplotlib", icon: <FaChartBar className="text-blue-600" size={30} />, description: "Data visualization in analysis dashboards" },
+                    { name: "Postman", icon: <SiPostman className="text-orange-600" size={30} />, description: "API testing and development workflow" },
+                    { name: "Tableau", icon: <FaChartBar className="text-blue-700" size={30} />, description: "Business intelligence in SIH 2024 dashboard" },
+                    { name: "Power BI", icon: <FaChartBar className="text-yellow-600" size={30} />, description: "Data analytics and visualization platform" },
+                    { name: "Scikit-learn", icon: <SiScikitlearn className="text-orange-500" size={30} />, description: "ML algorithms in Driver Drowsiness Detection system" },
+                    { name: "REST API", icon: <AiOutlineApi className="text-green-600" size={30} />, description: "API architecture in all web applications" },
+                    { name: "Linux", icon: <SiLinux className="text-gray-800" size={30} />, description: "Development environment and server deployment" },
+                    { name: "NLP", icon: <FaBrain className="text-purple-500" size={30} />, description: "Natural Language Processing in Grammarly prototype and Image Caption Generator" },
                 ]
             },
         ],
@@ -341,7 +343,7 @@ const Main = () => {
     return (
         <div className="w-full h-full bg-neutral-300 rounded-2xl notebook-bg p-4">
 
-            <Header />
+            <Header onEmailClick={() => setIsContactModalOpen(true)} />
             {/* Desktop icons */}
             <div className="flex flex-wrap gap-14 mt-6 justify-start p-4">
                 {apps.map((app) => (
@@ -423,7 +425,10 @@ const Main = () => {
                             <div className="flex-1 p-6 overflow-y-auto scrollbar-hide">
                                 {selectedFile ? (
                                     <>
-                                        <h2 className="text-4xl font-bold mb-4 unlock-regular">{selectedFile.name}</h2>
+                                        <h2 className="text-4xl font-bold mb-4 unlock-regular flex items-center gap-3">
+                                            {selectedFile.icon && <span>{selectedFile.icon}</span>}
+                                            {selectedFile.name}
+                                        </h2>
                                         {selectedFile.subheading && <h3 className="text-xl font-semibold mb-2 chakra-petch-regular">{selectedFile.subheading}</h3>}
                                         <p className="chakra-petch-light">{selectedFile.description}</p>
                                         {selectedFile.skills && (
@@ -443,13 +448,16 @@ const Main = () => {
                                                     target="_blank"
                                                     className="relative group flex items-center space-x-2 text-black underline"
                                                 >
-                                                    {/* Icon with tooltip */}
+                                                    {/* Platform-specific icon */}
                                                     <div className="relative">
-                                                        <FaGithub size={30} />
+                                                        {selectedFile.name === "LeetCode" && <SiLeetcode size={30} className="text-orange-600" />}
+                                                        {selectedFile.name === "CodeChef" && <SiCodechef size={30} className="text-brown-600" />}
+                                                        {selectedFile.name === "CodeForces" && <SiCodeforces size={30} className="text-blue-600" />}
+                                                        {selectedFile.name !== "LeetCode" && selectedFile.name !== "CodeChef" && selectedFile.name !== "CodeForces" && <FaGithub size={30} />}
                                                         <span className="absolute left-full top-1/2 -translate-y-1/2 ml-2
       px-2 py-1 text-sm text-white bg-gray-800 rounded-md 
       opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                                                            Find the building blocks
+                                                            {selectedFile.name === "LeetCode" || selectedFile.name === "CodeChef" || selectedFile.name === "CodeForces" ? "Visit Profile" : "Find the building blocks"}
                                                         </span>
                                                     </div>
 
@@ -468,6 +476,9 @@ const Main = () => {
                     </div>
                 </div>
             )}
+
+            {/* Contact Modal */}
+            <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
 
         </div>
     );
