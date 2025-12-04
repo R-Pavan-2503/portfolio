@@ -28,7 +28,7 @@ const Main = () => {
 
             <Header onEmailClick={() => setIsContactModalOpen(true)} />
             {/* Desktop icons - Responsive Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-8 md:gap-14 mt-4 sm:mt-6 p-2 sm:p-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-8 md:gap-14 mt-4 sm:mt-6 p-2 sm:p-4 pb-16 sm:pb-4">
                 {apps.map((app) => (
                     <DesktopApp
                         key={app.title}

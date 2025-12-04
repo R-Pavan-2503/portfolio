@@ -30,7 +30,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                             <FaUser className="text-white text-2xl sm:text-3xl md:text-4xl" />
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold unlock-regular">{contactInfo.name}</h2>
-                        <p className="text-sm sm:text-base md:text-lg chakra-petch-light text-gray-600 mt-2">Software Engineer • AI/ML Enthusiast</p>
+                        <p className="text-sm sm:text-base md:text-lg chakra-petch-light text-gray-600 mt-2">Software Engineer • Web Developer • AI/ML Enthusiast</p>
                     </div>
 
                     {/* Contact Cards - Responsive Grid: 1 col mobile, 2 cols desktop */}
@@ -64,20 +64,6 @@ const ContactModal = ({ isOpen, onClose }) => {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Date of Birth Card */}
-                        <div className="border-4 border-black rounded-2xl p-4 sm:p-5 md:p-6 bg-white hover:bg-gray-50 transition-all hover:scale-105 shadow-lg">
-                            <div className="flex items-center gap-3 sm:gap-4">
-                                <div className="bg-blue-100 p-3 sm:p-4 rounded-xl flex-shrink-0">
-                                    <FaCalendar className="text-2xl sm:text-3xl text-blue-600" />
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                    <p className="text-xs sm:text-sm chakra-petch-semibold text-gray-500 mb-1">DATE OF BIRTH</p>
-                                    <p className="text-sm sm:text-base md:text-lg chakra-petch-regular font-semibold text-black">{contactInfo.dob}</p>
-                                </div>
-                            </div>
-                        </div>
-
                         {/* LinkedIn Card */}
                         <div className="border-4 border-black rounded-2xl p-4 sm:p-5 md:p-6 bg-white hover:bg-gray-50 transition-all hover:scale-105 shadow-lg">
                             <div className="flex items-center gap-3 sm:gap-4">
@@ -117,6 +103,59 @@ const ContactModal = ({ isOpen, onClose }) => {
                                 </div>
                             </div>
                         </div>
+
+                        {/* Date of Birth Card */}
+                        {/* <div className="border-4 border-black rounded-2xl p-4 sm:p-5 md:p-6 bg-white hover:bg-gray-50 transition-all hover:scale-105 shadow-lg">
+                            <div className="flex items-center gap-3 sm:gap-4">
+                                <div className="bg-blue-100 p-3 sm:p-4 rounded-xl flex-shrink-0">
+                                    <FaCalendar className="text-2xl sm:text-3xl text-blue-600" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <p className="text-xs sm:text-sm chakra-petch-semibold text-gray-500 mb-1">DATE OF BIRTH</p>
+                                    <p className="text-sm sm:text-base md:text-lg chakra-petch-regular font-semibold text-black">{contactInfo.dob}</p>
+                                </div>
+                            </div>
+                        </div> */}
+
+                        {/* LinkedIn Card */}
+                        {/* <div className="border-4 border-black rounded-2xl p-4 sm:p-5 md:p-6 bg-white hover:bg-gray-50 transition-all hover:scale-105 shadow-lg">
+                            <div className="flex items-center gap-3 sm:gap-4">
+                                <div className="bg-blue-100 p-3 sm:p-4 rounded-xl flex-shrink-0">
+                                    <FaLinkedin className="text-2xl sm:text-3xl text-blue-700" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <p className="text-xs sm:text-sm chakra-petch-semibold text-gray-500 mb-1">LINKEDIN</p>
+                                    <a
+                                        href={contactInfo.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-sm sm:text-base md:text-lg chakra-petch-regular hover:underline truncate block font-semibold text-black"
+                                    >
+                                        /rpavan2503
+                                    </a>
+                                </div>
+                            </div>
+                        </div> */}
+
+                        {/* GitHub Card - Full Width on mobile, centered on desktop */}
+                        {/* <div className="md:col-span-2 border-4 border-black rounded-2xl p-4 sm:p-5 md:p-6 bg-white hover:bg-gray-50 transition-all hover:scale-105 shadow-lg max-w-md mx-auto w-full">
+                            <div className="flex items-center gap-3 sm:gap-4 justify-center">
+                                <div className="bg-gray-100 p-3 sm:p-4 rounded-xl flex-shrink-0">
+                                    <FaGithub className="text-2xl sm:text-3xl text-gray-800" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <p className="text-xs sm:text-sm chakra-petch-semibold text-gray-500 mb-1">GITHUB</p>
+                                    <a
+                                        href={contactInfo.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-sm sm:text-base md:text-lg chakra-petch-regular hover:underline truncate block font-semibold text-black"
+                                    >
+                                        /R-Pavan-2503
+                                    </a>
+                                </div>
+                            </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
