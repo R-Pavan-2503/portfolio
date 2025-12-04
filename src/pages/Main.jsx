@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DesktopApp from "../components/DesktopApp";
-import { FaLaptopCode, FaGraduationCap, FaFolder, FaFile, FaFolderOpen, FaChartBar, FaCertificate, FaCode, FaUsers, FaFileAlt, FaDownload } from "react-icons/fa";
+import { FaLaptopCode, FaGraduationCap, FaFolder, FaFile, FaFolderOpen, FaChartBar, FaCertificate, FaCode, FaUsers, FaFileAlt, FaDownload, FaInstagram, FaGithub } from "react-icons/fa";
 import { VscBracketDot } from "react-icons/vsc";
 import { GrAchievement } from "react-icons/gr";
 import Header from "../components/Header";
@@ -11,7 +11,7 @@ import { MdFileOpen } from "react-icons/md";
 import { SiReact, SiHtml5, SiCss3, SiNodedotjs, SiMongodb, SiTailwindcss, SiChartdotjs, SiJavascript, SiApollographql, SiMaterialformkdocs, SiPostgresql, SiExpress, SiPython, SiOpencv, SiTensorflow, SiScikitlearn, SiPandas, SiLeetcode, SiCodechef, SiCodeforces, SiCplusplus, SiMysql, SiFigma, SiBootstrap, SiGit, SiGithub, SiJenkins, SiDocker, SiKubernetes, SiNumpy, SiPostman, SiLinux, SiC } from "react-icons/si";
 import { AiOutlineApi } from "react-icons/ai";
 import { MdDesignServices } from "react-icons/md";
-import { FaLayerGroup, FaGithub, FaRobot, FaBrain, FaTrophy, FaMedal, FaStar } from "react-icons/fa";
+import { FaLayerGroup, FaRobot, FaBrain, FaTrophy, FaMedal, FaStar } from "react-icons/fa";
 
 
 const skillIcons = {
@@ -55,7 +55,7 @@ const Main = () => {
         { title: "Internships", icon: <FaGraduationCap /> },
         { title: "Skills", icon: <VscBracketDot /> },
         { title: "Achievements", icon: <GrAchievement /> },
-        { title: "Certificates", icon: <FaCertificate /> },
+        { title: "Certificates", icon: <FaMedal /> },
         { title: "Coding Profiles", icon: <FaCode /> },
         { title: "Volunteering", icon: <FaUsers /> },
         { title: "Resume", icon: <FaFileAlt /> },
@@ -357,11 +357,11 @@ const Main = () => {
     };
 
     return (
-        <div className="w-full h-full bg-neutral-300 rounded-2xl notebook-bg p-4">
+        <div className="w-full h-full bg-neutral-300 rounded-none sm:rounded-2xl notebook-bg p-2 sm:p-4">
 
             <Header onEmailClick={() => setIsContactModalOpen(true)} />
-            {/* Desktop icons */}
-            <div className="flex flex-wrap gap-14 mt-6 justify-start p-4">
+            {/* Desktop icons - Responsive Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-8 md:gap-14 mt-4 sm:mt-6 p-2 sm:p-4">
                 {apps.map((app) => (
                     <DesktopApp
                         key={app.title}
@@ -381,16 +381,16 @@ const Main = () => {
                     {/* This div blurs everything behind it */}
                     <div className="absolute inset-0 backdrop-blur-md bg-black/10"></div>
 
-                    {/* Modal content */}
-                    <div className="relative w-4/5 h-4/5 flex flex-col overflow-hidden shadow-lg modal-border rounded-[45px] notebook-bg z-10">
+                    {/* Modal content - Responsive */}
+                    <div className="relative w-full h-full sm:w-11/12 sm:h-5/6 md:w-4/5 md:h-4/5 flex flex-col overflow-hidden shadow-lg modal-border sm:rounded-[45px] notebook-bg z-10">
                         <ModelHeader onClose={() => setOpenApp(null)} />
-                        <div className="flex flex-1 overflow-hidden">
-                            {/* Left panel */}
-                            <div className="w-[30%] p-4 overflow-y-auto border-r-2 border-black scrollbar-hide">
+                        <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
+                            {/* Left panel - Full width on mobile, 30% on desktop */}
+                            <div className="w-full md:w-[30%] p-2 sm:p-4 overflow-y-auto border-b-2 md:border-b-0 md:border-r-2 border-black scrollbar-hide max-h-[40vh] md:max-h-none">
                                 <ul>
                                     {/* Root app */}
                                     <li className="mb-2">
-                                        <div className="flex items-center gap-2 p-2 font-bold text-2xl">
+                                        <div className="flex items-center gap-2 p-1 sm:p-2 font-bold text-lg sm:text-xl md:text-2xl">
                                             <FaFolderOpen size={25} />
                                             <span className="unlock-regular ">{openApp}</span>
                                         </div>
@@ -456,16 +456,16 @@ const Main = () => {
                                 </ul>
                             </div>
 
-                            {/* Right panel */}
-                            <div className="flex-1 p-6 overflow-y-auto scrollbar-hide">
+                            {/* Right panel - Responsive */}
+                            <div className="flex-1 p-3 sm:p-4 md:p-6 overflow-y-auto scrollbar-hide">
                                 {selectedFile ? (
                                     <>
-                                        <h2 className="text-4xl font-bold mb-4 unlock-regular flex items-center gap-3">
+                                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 unlock-regular flex items-center gap-2 sm:gap-3">
                                             {selectedFile.icon && <span>{selectedFile.icon}</span>}
                                             {selectedFile.name}
                                         </h2>
-                                        {selectedFile.subheading && <h3 className="text-xl font-semibold mb-2 chakra-petch-regular">{selectedFile.subheading}</h3>}
-                                        <p className="chakra-petch-light">{selectedFile.description}</p>
+                                        {selectedFile.subheading && <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2 chakra-petch-regular">{selectedFile.subheading}</h3>}
+                                        <p className="chakra-petch-light text-sm sm:text-base">{selectedFile.description}</p>
                                         {selectedFile.skills && (
                                             <div className="mt-4 flex flex-wrap items-center gap-2">
                                                 {selectedFile.skills.map((skill, idx) => (
@@ -488,11 +488,12 @@ const Main = () => {
                                                         {selectedFile.name === "LeetCode" && <SiLeetcode size={30} className="text-orange-600" />}
                                                         {selectedFile.name === "CodeChef" && <SiCodechef size={30} className="text-brown-600" />}
                                                         {selectedFile.name === "CodeForces" && <SiCodeforces size={30} className="text-blue-600" />}
-                                                        {selectedFile.name !== "LeetCode" && selectedFile.name !== "CodeChef" && selectedFile.name !== "CodeForces" && <FaGithub size={30} />}
+                                                        {selectedFile.link?.includes("instagram.com") && <FaInstagram size={30} className="text-pink-600" />}
+                                                        {selectedFile.name !== "LeetCode" && selectedFile.name !== "CodeChef" && selectedFile.name !== "CodeForces" && !selectedFile.link?.includes("instagram.com") && <FaGithub size={30} />}
                                                         <span className="absolute left-full top-1/2 -translate-y-1/2 ml-2
       px-2 py-1 text-sm text-white bg-gray-800 rounded-md 
       opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                                                            {selectedFile.name === "LeetCode" || selectedFile.name === "CodeChef" || selectedFile.name === "CodeForces" ? "Visit Profile" : "Find the building blocks"}
+                                                            {selectedFile.link?.includes("instagram.com") ? "Visit Instagram" : selectedFile.name === "LeetCode" || selectedFile.name === "CodeChef" || selectedFile.name === "CodeForces" ? "Visit Profile" : "Find the building blocks"}
                                                         </span>
                                                     </div>
 

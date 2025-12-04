@@ -46,15 +46,15 @@ const ResumeContent = () => {
                 </div>
             </div> */}
 
-            <div className="flex gap-4">
+            {/* Action Buttons - Responsive: stack on mobile, side-by-side on desktop */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
                 {/* Download Button */}
                 <a
                     href="/resume.pdf"
                     download="R_Pavan_Resume.pdf"
-                    style={{ padding: '8px 8px' }}
-                    className="inline-flex items-center gap-3 bg-black text-white rounded-xl hover:bg-gray-800 transition-all hover:scale-105 chakra-petch-semibold text-lg border-4 border-black shadow-lg"
+                    className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-3 sm:px-8 sm:py-4 bg-black text-white rounded-xl hover:bg-gray-800 transition-all hover:scale-105 chakra-petch-semibold text-base sm:text-lg border-4 border-black shadow-lg w-full sm:w-auto"
                 >
-                    <FaDownload size={22} />
+                    <FaDownload size={18} className="sm:w-5 sm:h-5" />
                     Download Resume
                 </a>
 
@@ -63,20 +63,19 @@ const ResumeContent = () => {
                     href="/resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ padding: '8px 8px' }}
-                    className="inline-flex items-center gap-3 bg-white text-black rounded-xl border-4 border-black hover:bg-gray-200 transition-all hover:scale-105 chakra-petch-semibold text-lg shadow-lg"
+                    className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-3 sm:px-8 sm:py-4 bg-white text-black rounded-xl border-4 border-black hover:bg-gray-200 transition-all hover:scale-105 chakra-petch-semibold text-base sm:text-lg shadow-lg w-full sm:w-auto"
                 >
-                    <MdFileOpen size={22} />
+                    <MdFileOpen size={18} className="sm:w-5 sm:h-5" />
                     View in New Tab
                 </a>
             </div>
 
-            {/* Resume Text Content - Beautifully Formatted */}
-            <div className="border-4 border-black rounded-2xl p-8 bg-white">
+            {/* Resume Text Content - Responsive */}
+            <div className="border-4 border-black rounded-2xl p-4 sm:p-6 md:p-8 bg-white">
                 {/* Header */}
-                <div className="text-center border-b-4 border-black pb-6 mb-6">
-                    <h1 className="text-5xl font-bold unlock-regular mb-3">R. PAVAN</h1>
-                    <div className="flex flex-wrap justify-center gap-3 text-sm chakra-petch-regular">
+                <div className="text-center border-b-4 border-black pb-4 sm:pb-6 mb-4 sm:mb-6">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold unlock-regular mb-2 sm:mb-3">R. PAVAN</h1>
+                    <div className="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs sm:text-sm chakra-petch-regular">
                         <span>✉️ sara.pavansriram@gmail.com</span>
                         <span>•</span>
                         <span>📱 8667410621</span>
