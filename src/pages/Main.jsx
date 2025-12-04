@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import DesktopApp from "../components/DesktopApp";
-import { FaLaptopCode, FaGraduationCap, FaFolder, FaFile, FaFolderOpen, FaChartBar } from "react-icons/fa";
+import { FaLaptopCode, FaGraduationCap, FaFolder, FaFile, FaFolderOpen, FaChartBar, FaCertificate, FaCode, FaUsers } from "react-icons/fa";
 import { VscBracketDot } from "react-icons/vsc";
 import { GrAchievement } from "react-icons/gr";
 import Header from "../components/Header";
 import ModelHeader from "../components/ModelHeader";
 import { MdFileOpen } from "react-icons/md";
-import { SiReact, SiHtml5, SiCss3, SiNodedotjs, SiMongodb, SiTailwindcss, SiChartdotjs, SiJavascript, SiApollographql, SiMaterialformkdocs, SiPostgresql, SiExpress, SiPython, SiOpencv, SiTensorflow, SiScikitlearn, SiPandas, SiNvidia } from "react-icons/si";
+import { SiReact, SiHtml5, SiCss3, SiNodedotjs, SiMongodb, SiTailwindcss, SiChartdotjs, SiJavascript, SiApollographql, SiMaterialformkdocs, SiPostgresql, SiExpress, SiPython, SiOpencv, SiTensorflow, SiScikitlearn, SiPandas } from "react-icons/si";
 import { AiOutlineApi } from "react-icons/ai";
 import { MdDesignServices } from "react-icons/md";
-import { FaLayerGroup, FaGithub, FaRobot, FaBrain } from "react-icons/fa";
+import { FaLayerGroup, FaGithub, FaRobot, FaBrain, FaTrophy, FaMedal, FaStar } from "react-icons/fa";
 
 
 const skillIcons = {
@@ -37,7 +37,9 @@ const skillIcons = {
     "Data Preprocessing": <SiPandas className="text-green-500" />,
     "Model Training & Evaluation": <SiScikitlearn className="text-blue-700" />,
     "Accuracy Optimization": <FaBrain className="text-indigo-600" />,
-    "Safety-focused AI Applications": <FaBrain className="text-red-600" />
+    "Safety-focused AI Applications": <FaBrain className="text-red-600" />,
+    "NLP": <FaBrain className="text-purple-500" />,
+    "NER": <FaBrain className="text-pink-500" />,
 };
 
 const Main = () => {
@@ -49,7 +51,10 @@ const Main = () => {
         { title: "Projects", icon: <FaLaptopCode /> },
         { title: "Internships", icon: <FaGraduationCap /> },
         { title: "Skills", icon: <VscBracketDot /> },
-        { title: "Achievement", icon: <GrAchievement /> },
+        { title: "Achievements", icon: <GrAchievement /> },
+        { title: "Certificates", icon: <FaCertificate /> },
+        { title: "Coding Profiles", icon: <FaCode /> },
+        { title: "Volunteering", icon: <FaUsers /> },
     ];
 
     // Folder and file structure
@@ -60,7 +65,7 @@ const Main = () => {
                 children: [
                     {
                         name: "Travels Dashboard",
-                        subheading: "Real-Time Ride Management",
+                        subheading: "Freelancing - MongoDB, Express.js, React.js, Node.js - 2024",
                         description: "Built a responsive MERN stack dashboard for managing rides and trips, enabling real-time data tracking, trip assignment, and streamlined admin workflows. Leveraging Node.js, Express.js, and MongoDB, the backend handles ride management, automated invoicing, and email notifications, while the React.js frontend ensures a smooth, interactive user experience for admins and operators.",
                         skills: [
                             "React",
@@ -71,17 +76,16 @@ const Main = () => {
                             "JavaScript",
                             "Material UI",
                             "Chart.js",
-                            "JavaScript",
                             "RESTAPI",
                             "Responsive UI Design",
                             "Data Visualization",
                             "Frontend State Management"
                         ],
-                        link: "https://myportfolio.com",
+                        link: "https://github.com/R-Pavan-2503",
                     },
                     {
                         name: "Water Forecasting Dashboard",
-                        subheading: "Real-Time Insights for Resource Management",
+                        subheading: "Frontend - React.js, Material UI, Graph.js - 2024",
                         description: "Developed a comprehensive React.js dashboard using Material UI and Chart.js to deliver real-time water and reservoir forecasts with interactive and dynamic visualizations. The platform enables stakeholders to explore and customize data representations, including trend analysis and predictive insights, enhancing decision-making for efficient water resource management. Implemented responsive design, state management, and data-driven components to ensure smooth user interaction, while integrating APIs for real-time data fetching and updates, transforming complex datasets into actionable insights through an intuitive and visually appealing interface.",
                         skills: [
                             "React",
@@ -95,7 +99,7 @@ const Main = () => {
                             "Data Visualization",
                             "Frontend State Management"
                         ],
-                        link: "https://myportfolio.com",
+                        link: "https://github.com/R-Pavan-2503",
 
                     },
                 ],
@@ -104,9 +108,9 @@ const Main = () => {
                 name: "AIML",
                 children: [
                     {
-                        name: "Driver Drowsiness Detection System",
-                        subheading: "Predicting driver fatigue",
-                        description: "I developed an advanced Driver Drowsiness Detection system using Python and OpenCV that predicts a driver’s sleep status with 90% accuracy and reduces false positives by 20%. The system leverages computer vision techniques to monitor eye and facial cues in real-time, while machine learning models analyze patterns indicative of fatigue. By detecting drowsiness early, it significantly improves road safety, reducing the likelihood of accidents by 78%. This project demonstrates the integration of real-time data processing, model optimization, and safety-focused AI applications, highlighting the practical impact of intelligent systems in everyday scenarios like driving.",
+                        name: "Driver Drowsiness Detection",
+                        subheading: "Python, OpenCV - 2022",
+                        description: "Developed an advanced Driver Drowsiness Detection system using Python and OpenCV that predicts a driver's sleep status with 90% accuracy and reduces false positives by 20%. The system leverages computer vision techniques to monitor eye and facial cues in real-time, while machine learning models analyze patterns indicative of fatigue. By detecting drowsiness early, it significantly improves road safety, reducing the likelihood of accidents by 78%. This project demonstrates the integration of real-time data processing, model optimization, and safety-focused AI applications, highlighting the practical impact of intelligent systems in everyday scenarios like driving.",
                         skills: [
                             "Python",
                             "OpenCV",
@@ -117,24 +121,211 @@ const Main = () => {
                             "Model Training & Evaluation",
                             "Accuracy Optimization",
                             "Safety-focused AI Applications"
-                        ]
-
+                        ],
+                        link: "https://github.com/R-Pavan-2503",
                     },
                 ],
             },
         ],
         Internships: [
             {
-                name: "Google",
+                name: "Nova Techset",
                 children: [
-                    { name: "Frontend Intern", subheading: "UI/UX Improvements", description: "Worked on UI improvements for Google Search." },
+                    {
+                        name: "Machine Learning Engineer",
+                        subheading: "04/2022 – 05/2022",
+                        description: "Developed a prototype to rival Grammarly, leveraging NLP techniques to detect errors in scientific and technical publications with 90% precision. Created a system to identify subject-verb disagreements and punctuation mistakes, providing alternative suggestions to authors.",
+                        skills: ["Python", "NLP", "Machine Learning"]
+                    },
                 ],
             },
             {
-                name: "Microsoft",
+                name: "Truly Media",
                 children: [
-                    { name: "Fullstack Intern", subheading: "Internal Tools", description: "Developed internal tools using React and .NET." },
+                    {
+                        name: "Python Developer",
+                        subheading: "05/2024 – 07/2024",
+                        description: "Developed AI-based applications, including an Image Caption Generator using OpenCV and NER, achieving 90% accuracy on 1,000+ images. Optimized the system for 20% fewer false positives and 87% true negatives, showcasing applications in media and accessibility.",
+                        skills: ["Python", "OpenCV", "NLP", "NER", "Machine Learning"]
+                    },
                 ],
+            },
+            {
+                name: "TechMedZ",
+                children: [
+                    {
+                        name: "Website Developer",
+                        subheading: "07/2023 – 10/2023",
+                        description: "Designed and developed a responsive website using React.js, Tailwind CSS, and Node.js, achieving an interactive design and UI. Enhanced user experience using dynamic interface and 3D model using Spline, increasing user interactions and usability.",
+                        skills: ["React", "Tailwindcss", "Node", "Responsive UI Design"]
+                    },
+                ],
+            },
+        ],
+        Skills: [
+            {
+                name: "Languages",
+                children: [
+                    { name: "Python", description: "Proficient in Python for AI/ML, web development, and automation" },
+                    { name: "C++", description: "Strong foundation in C++ for competitive programming and system-level programming" },
+                    { name: "JavaScript", description: "Expert in JavaScript for full-stack web development" },
+                    { name: "SQL", description: "Database query language for relational databases" },
+                    { name: "Java", description: "Object-oriented programming and enterprise applications" },
+                    { name: "C", description: "Low-level programming and system fundamentals" },
+                ]
+            },
+            {
+                name: "Databases",
+                children: [
+                    { name: "MySQL", description: "Relational database management system" },
+                    { name: "MongoDB", description: "NoSQL document-oriented database" },
+                    { name: "PostgreSQL", description: "Advanced open-source relational database" },
+                ]
+            },
+            {
+                name: "Web Development",
+                children: [
+                    { name: "React.js", description: "Modern frontend library for building user interfaces" },
+                    { name: "Node.js", description: "JavaScript runtime for server-side applications" },
+                    { name: "Express.js", description: "Web application framework for Node.js" },
+                    { name: "Figma", description: "UI/UX design and prototyping tool" },
+                    { name: "Bootstrap", description: "CSS framework for responsive web design" },
+                    { name: "Tailwind CSS", description: "Utility-first CSS framework" },
+                    { name: "HTML", description: "Markup language for web pages" },
+                    { name: "CSS", description: "Styling language for web design" },
+                ]
+            },
+            {
+                name: "DevOps",
+                children: [
+                    { name: "Git", description: "Version control system" },
+                    { name: "GitHub", description: "Code hosting platform for version control" },
+                    { name: "Jenkins", description: "Automation server for CI/CD" },
+                    { name: "Docker", description: "Containerization platform" },
+                    { name: "Kubernetes", description: "Container orchestration system" },
+                ]
+            },
+            {
+                name: "Machine Learning Tools",
+                children: [
+                    { name: "spaCy", description: "Industrial-strength NLP library" },
+                    { name: "Pandas", description: "Data manipulation and analysis library" },
+                    { name: "NumPy", description: "Numerical computing library" },
+                    { name: "Matplotlib", description: "Data visualization library" },
+                    { name: "Postman", description: "API development and testing tool" },
+                    { name: "Tableau", description: "Business intelligence and analytics platform" },
+                    { name: "Power BI", description: "Data visualization and business analytics" },
+                    { name: "Scikit-learn", description: "Machine learning library for Python" },
+                    { name: "REST API", description: "Web service architecture" },
+                    { name: "Linux", description: "Unix-like operating system" },
+                    { name: "NLP", description: "Natural Language Processing techniques" },
+                ]
+            },
+        ],
+        Achievements: [
+            {
+                name: "Hackathons",
+                children: [
+                    {
+                        name: "SIH Finalist 2024",
+                        subheading: "Smart India Hackathon 2024",
+                        description: "Developed an innovative reservoir and water management dashboard, showcasing real-time data analysis and improving resource management. Competed among thousands of teams nationwide and reached the finals.",
+                    },
+                    {
+                        name: "Finalist EPOCH (IITD)",
+                        subheading: "IIT Delhi Hackathon",
+                        description: "Developed an accident analysis dashboard, enabling data-driven insights for improved accident prevention and response strategies to avoid accidents. Demonstrated technical excellence and innovative problem-solving.",
+                    },
+                    {
+                        name: "Finalist in HACKCIT 2024",
+                        subheading: "Codeathon",
+                        description: "Competed in a codeathon showcasing problem-solving skills and innovative coding solutions in a highly competitive environment. Enhanced coding skills and collaboration abilities.",
+                    },
+                ]
+            },
+        ],
+        Certificates: [
+            {
+                name: "Cloud & Networking",
+                children: [
+                    {
+                        name: "AWS Cloud Practitioner",
+                        subheading: "Amazon Web Services",
+                        description: "Fundamentals of Cloud Development - Comprehensive understanding of AWS cloud services, architecture, and best practices.",
+                    },
+                    {
+                        name: "CISCO - Introduction to Networking",
+                        subheading: "Cisco Certified",
+                        description: "Basic Network Fundamentals - Covering networking protocols, infrastructure, and essential concepts.",
+                    },
+                ]
+            },
+            {
+                name: "Web Development",
+                children: [
+                    {
+                        name: "UDEMY - Web Development Bootcamp",
+                        subheading: "Udemy Certified",
+                        description: "Full-Stack Web Development - Complete bootcamp covering frontend and backend technologies, databases, and deployment.",
+                    },
+                    {
+                        name: "Meta Frontend Developer Professional",
+                        subheading: "Meta Certified",
+                        description: "Fundamentals and Frontend Tools - Professional certification in modern frontend development practices and tools.",
+                    },
+                ]
+            },
+            {
+                name: "Machine Learning",
+                children: [
+                    {
+                        name: "UDEMY - Machine Learning A-Z",
+                        subheading: "Udemy Certified",
+                        description: "Comprehensive Machine Learning - Hands-on training in machine learning algorithms, data preprocessing, and model deployment.",
+                    },
+                ]
+            },
+        ],
+        "Coding Profiles": [
+            {
+                name: "Competitive Programming",
+                children: [
+                    {
+                        name: "LeetCode",
+                        subheading: "Top 4% • Rating: 1953 • Knight Level",
+                        description: "Solved 727 problems with a current rating of 1953 and max rating of 1953. Achieved Knight level status and highest rank of 705 in Biweekly Contest 147. Consistently solving challenging algorithmic problems and maintaining top percentile performance.",
+                        link: "https://leetcode.com/u/R-Pavan-2503/",
+                    },
+                    {
+                        name: "CodeChef",
+                        subheading: "2 Star • Rating: 1459 • 400+ Problems",
+                        description: "Current rating of 1459 with max rating of 1524. Solved 400+ problems and achieved highest rank of 234 in Starters 144 Division 3. Actively participating in monthly contests and improving problem-solving skills.",
+                        link: "https://www.codechef.com/users/r_pavan_2503",
+                    },
+                    {
+                        name: "CodeForces",
+                        subheading: "Rating: 1096 • 100+ Problems",
+                        description: "Current rating of 1096 with max rating of 1096. Solved 100+ problems and achieved highest rank of 8088 in CodeForces 982 (Div 2) contest. Participating in regular contests to enhance algorithmic thinking.",
+                        link: "https://codeforces.com/profile/R-Pavan-2503",
+                    },
+                ]
+            },
+        ],
+        Volunteering: [
+            {
+                name: "MAGNUS Symposium",
+                children: [
+                    {
+                        name: "Graphic Design Team Lead",
+                        subheading: "Leadership Role",
+                        description: "Led the Graphic Design team for Magnus Symposium, a national-level event with 1000+ participants. Designed various posters, promotional materials, and branding assets. Coordinated a team of designers and ensured timely delivery of all visual content for the symposium.",
+                    },
+                    {
+                        name: "Web Development Workshop Speaker",
+                        subheading: "Technical Speaker",
+                        description: "Delivered a comprehensive lecture on modern web development, teaching 50+ participants practical skills and tools like React.js, Node.js, and Tailwind CSS. Created hands-on exercises and provided mentorship to aspiring developers.",
+                    },
+                ]
             },
         ],
     };
