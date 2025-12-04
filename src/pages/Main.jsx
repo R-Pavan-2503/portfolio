@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DesktopApp from "../components/DesktopApp";
-import { FaLaptopCode, FaGraduationCap, FaFolder, FaFile, FaFolderOpen, FaChartBar, FaCertificate, FaCode, FaUsers } from "react-icons/fa";
+import { FaLaptopCode, FaGraduationCap, FaFolder, FaFile, FaFolderOpen, FaChartBar, FaCertificate, FaCode, FaUsers, FaFileAlt, FaDownload } from "react-icons/fa";
 import { VscBracketDot } from "react-icons/vsc";
 import { GrAchievement } from "react-icons/gr";
 import Header from "../components/Header";
@@ -57,6 +57,7 @@ const Main = () => {
         { title: "Certificates", icon: <FaCertificate /> },
         { title: "Coding Profiles", icon: <FaCode /> },
         { title: "Volunteering", icon: <FaUsers /> },
+        { title: "Resume", icon: <FaFileAlt /> },
     ];
 
     // Folder and file structure
@@ -330,6 +331,14 @@ const Main = () => {
                 ]
             },
         ],
+        Resume: [
+            {
+                name: "Resume.pdf",
+                subheading: "View & Download",
+                description: "Complete resume with professional experience, education, skills, projects, achievements, and certifications. Updated December 2024.",
+                isPDF: true,
+            },
+        ],
     };
 
 
@@ -379,43 +388,62 @@ const Main = () => {
                                             <span className="unlock-regular ">{openApp}</span>
                                         </div>
 
-                                        {/* Folders inside app */}
+                                        {/* Check if it's Resume (direct files) or other apps (folders) */}
                                         <ul className="ml-6">
-                                            {appContents[openApp]?.map((folder, idx) => (
-                                                <li key={idx} className="mb-1">
-                                                    <div
-                                                        className={`flex items-center gap-2 p-1 text-xl rounded cursor-pointer hover:bg-gray-300 ${expandedFolders[folder.name] ? "unlock-regular font-bold" : "unlock-regular font-normal"
-                                                            }`}
-                                                        onClick={() => toggleFolder(folder.name)}
-                                                    >
-                                                        {/* Show folder icon */}
-                                                        <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
-                                                            {expandedFolders[folder.name] ? <FaFolderOpen size={20} /> : <FaFolder size={20} />}
-                                                        </span>
-                                                        <span>{folder.name}</span>
-                                                    </div>
+                                            {openApp === "Resume" ? (
+                                                // Direct file display for Resume
+                                                appContents[openApp]?.map((fileObj, idx) => (
+                                                    <li key={idx}>
+                                                        <div
+                                                            className={`flex items-center gap-2 pl-1 p-1 rounded cursor-pointer text-lg hover:bg-gray-200 ${selectedFile?.name === fileObj.name
+                                                                ? "chakra-petch-regular bg-gray-300 pl-3"
+                                                                : "chakra-petch-light"
+                                                                }`}
+                                                            onClick={() => setSelectedFile(fileObj)}
+                                                        >
+                                                            <FaFile size={20} />
+                                                            <span>{fileObj.name}</span>
+                                                        </div>
+                                                    </li>
+                                                ))
+                                            ) : (
+                                                // Folder structure for other apps
+                                                appContents[openApp]?.map((folder, idx) => (
+                                                    <li key={idx} className="mb-1">
+                                                        <div
+                                                            className={`flex items-center gap-2 p-1 text-xl rounded cursor-pointer hover:bg-gray-300 ${expandedFolders[folder.name] ? "unlock-regular font-bold" : "unlock-regular font-normal"
+                                                                }`}
+                                                            onClick={() => toggleFolder(folder.name)}
+                                                        >
+                                                            {/* Show folder icon */}
+                                                            <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                                                                {expandedFolders[folder.name] ? <FaFolderOpen size={20} /> : <FaFolder size={20} />}
+                                                            </span>
+                                                            <span>{folder.name}</span>
+                                                        </div>
 
-                                                    {/* Files inside folder */}
-                                                    {expandedFolders[folder.name] && (
-                                                        <ul className="ml-6">
-                                                            {folder.children.map((fileObj, fidx) => (
-                                                                <li key={fidx}>
-                                                                    <div
-                                                                        className={`flex items-center gap-2 pl-1 p-1 rounded cursor-pointer text-lg hover:bg-gray-200 ${selectedFile?.name === fileObj.name
-                                                                            ? "chakra-petch-regular bg-gray-300 pl-3"
-                                                                            : "chakra-petch-light"
-                                                                            }`}
-                                                                        onClick={() => setSelectedFile(fileObj)}
-                                                                    >
-                                                                        <FaFile size={20} />
-                                                                        <span>{fileObj.name}</span>
-                                                                    </div>
-                                                                </li>
-                                                            ))}
-                                                        </ul>
-                                                    )}
-                                                </li>
-                                            ))}
+                                                        {/* Files inside folder */}
+                                                        {expandedFolders[folder.name] && (
+                                                            <ul className="ml-6">
+                                                                {folder.children.map((fileObj, fidx) => (
+                                                                    <li key={fidx}>
+                                                                        <div
+                                                                            className={`flex items-center gap-2 pl-1 p-1 rounded cursor-pointer text-lg hover:bg-gray-200 ${selectedFile?.name === fileObj.name
+                                                                                ? "chakra-petch-regular bg-gray-300 pl-3"
+                                                                                : "chakra-petch-light"
+                                                                                }`}
+                                                                            onClick={() => setSelectedFile(fileObj)}
+                                                                        >
+                                                                            <FaFile size={20} />
+                                                                            <span>{fileObj.name}</span>
+                                                                        </div>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        )}
+                                                    </li>
+                                                ))
+                                            )}
                                         </ul>
                                     </li>
                                 </ul>
@@ -466,6 +494,49 @@ const Main = () => {
                                                 </a>
                                             </div>
                                         )}
+
+                                        {/* PDF Download Section - Clean Design */}
+                                        {selectedFile.isPDF && (
+                                            <div className="mt-8">
+                                                {/* Styled Download Card */}
+                                                <div className="border-4 border-black rounded-2xl p-8 bg-gray-100 hover:bg-gray-200 transition-colors">
+                                                    <div className="flex flex-col items-center justify-center space-y-6">
+                                                        {/* PDF Icon */}
+                                                        <div className="text-8xl">
+                                                            <FaFileAlt className="text-red-600" />
+                                                        </div>
+
+                                                        {/* File Info */}
+                                                        <div className="text-center">
+                                                            <h3 className="text-3xl font-bold unlock-regular mb-2">R. Pavan - Resume</h3>
+                                                            <p className="text-lg chakra-petch-light text-gray-600">Professional Resume PDF</p>
+                                                        </div>
+
+                                                        {/* Download Button */}
+                                                        <a
+                                                            href="/resume.pdf"
+                                                            download="R_Pavan_Resume.pdf"
+                                                            className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded-xl hover:bg-gray-800 transition-all hover:scale-105 chakra-petch-regular text-xl border-2 border-black"
+                                                        >
+                                                            <FaDownload size={24} />
+                                                            Download Resume
+                                                        </a>
+
+                                                        {/* View Button */}
+                                                        <a
+                                                            href="/resume.pdf"
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="inline-flex items-center gap-3 px-8 py-3 bg-transparent text-black rounded-xl border-2 border-black hover:bg-gray-300 transition-all chakra-petch-regular text-lg"
+                                                        >
+                                                            View in New Tab
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+
+
 
                                     </>
                                 ) : (
